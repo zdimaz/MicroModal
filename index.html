@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>micromodal</title>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/modern-normalize/modern-normalize.css"
+  />
+  <link rel="stylesheet" href="styles/style.css" />
+  <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+</head>
+<body>
+  <main>
+    <section>
+      <div class="container">
+        <h1>MicroModal Demo Simple demo using MicroModal.js. Usage Click "Open Modal" to display the modal.</h1>
+        <p>
+          MicroModal Demo
+
+          Simple demo using MicroModal.js.
+
+          Usage
+
+          Click "Open Modal" to display the modal.
+
+          Click the overlay or the close button to hide.
+
+          Press Escape to close as well.
+
+          <button data-micromodal-trigger="modal-1">
+            data-micromodal-trigger
+          </button>
+        </p>
+      </div>
+    </section>
+  </main>
+  <!-- Modal Structure -->
+  <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1">
+      <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+        <div class="modal__close_wrap">
+          <button class="modal__close" aria-label="Close modal" data-micromodal-close>&times;</button>
+        </div>
+        <div class="modal__scrollbar">
+          <header class="modal__header">
+            <h2 class="modal__title" id="modal-1-title">Modal Title</h2>
+          </header>
+          <div class="modal__content" id="modal-1-content">
+            <p>This is a basic modal powered by <code>micromodal</code>.</p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos omnis sint velit, deleniti eveniet excepturi quis nemo maxime adipisci in non blanditiis inventore temporibus facilis consequatur, pariatur eos labore. Laudantium unde numquam magnam praesentium dolorem, eaque molestiae. Architecto perferendis, dolores saepe exercitationem odio optio nam perspiciatis. Quis tempore esse laboriosam, numquam placeat sunt repellendus ratione nostrum quas, dolore voluptatum officia, fugit ipsum natus illo iusto. Accusantium sint nemo, provident beatae amet non numquam? Veniam eum repudiandae, cumque itaque incidunt eveniet pariatur quam officia? Necessitatibus iure expedita beatae cumque ut numquam veritatis totam quis quasi, est hic ad reprehenderit, quidem nulla recusandae voluptatem aut facere nostrum aliquid! Laudantium pariatur eligendi dolore voluptates quaerat adipisci ea repellat veniam itaque, distinctio, sunt inventore deleniti architecto accusantium, excepturi molestiae dolorem quo totam eaque nobis dolor dicta rerum fugit animi? Optio repudiandae autem, laudantium eum voluptas blanditiis dolorem reprehenderit odio laborum quo aliquam? Fuga quasi maxime vel iure excepturi officia iste sapiente provident. Dolorem velit nostrum repellat at. Est, nisi. Commodi sed dicta totam porro excepturi quis! Recusandae esse nam quae dolore eius, animi aut similique atque, quasi aliquam neque numquam. Aperiam neque illo soluta accusamus pariatur. Quaerat error vero minima facere, alias laboriosam non itaque quo vitae provident quos sint necessitatibus, saepe corporis incidunt nisi expedita perspiciatis omnis explicabo aperiam consequuntur fuga molestiae? Veniam pariatur cupiditate tempora possimus modi, distinctio earum, hic incidunt sit numquam culpa accusantium ullam quas in ex, commodi similique repudiandae? Corrupti dolor eos ad facilis suscipit architecto, impedit laudantium quibusdam non aliquid cumque quis nostrum qui veritatis voluptate. Hic sed iusto amet id eos obcaecati architecto cupiditate temporibus ex voluptate illum aspernatur, ipsa repellat, ipsum enim, minima perspiciatis non earum omnis similique. Ratione quia ullam esse similique distinctio laudantium. Voluptatem earum molestias ab enim expedita sunt assumenda distinctio quod alias, laboriosam est natus totam soluta laudantium accusantium repellat. Quibusdam sit reprehenderit, quidem magni sequi quisquam modi ullam possimus? Asperiores saepe earum eligendi quaerat illo ullam quod. Sunt, debitis nulla? Autem voluptates nostrum eligendi corrupti, ipsa dolores dolore eius sed necessitatibus nesciunt veniam quae? Officia enim vel aspernatur fugiat beatae. Eos maxime omnis quasi quos harum porro ab ad non, voluptatem repellat praesentium! Mollitia, quo optio quod repellendus commodi in, expedita ut ex quas molestiae dolor facere quis distinctio veniam quidem fugit ipsam. Repudiandae, ullam eius ducimus dolor quis alias blanditiis! Corporis odio ratione deleniti voluptate aliquam adipisci iusto exercitationem ipsum explicabo, illo eligendi commodi, voluptates voluptatum ut tenetur recusandae, laborum ullam rem? Delectus, possimus sunt quasi ab soluta velit harum aut qui, ipsam cum adipisci magni quos maxime tempora quis neque incidunt eaque. Iusto velit ea odit praesentium exercitationem, perferendis consequatur quasi fugiat eaque asperiores quae voluptates dolore qui sequi minima suscipit similique aliquam itaque magnam id quia. Quae necessitatibus aperiam qui at. Officia nulla vitae cum id quisquam quasi ducimus eveniet doloribus architecto maxime quia pariatur repudiandae reiciendis minima, nihil nesciunt dolorem rem, culpa veniam ad iure cupiditate dolore. Ducimus rem facilis provident repudiandae, voluptatem nostrum expedita in illo?
+            <img src="https://picsum.photos/800/800?random=33">
+          </div>
+          <footer class="modal__footer">
+            <button class="btn" data-micromodal-close>Close</button>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    MicroModal.init({
+      onShow: modal => console.info(`${modal.id} is shown`), // [1]
+      onClose: modal => console.info(`${modal.id} is hidden`), // [2]
+      // openTrigger: 'data-custom-open', // [3]
+      // closeTrigger: 'data-custom-close', // [4]
+      // openClass: 'is-open', // [5]
+      disableScroll: true, // [6]
+      disableFocus: true, // [7]
+      awaitOpenAnimation: true, // [8]
+      awaitCloseAnimation: true, // [9]
+      debugMode: true // [10]
+    });
+  </script>
+</body>
+</html>
